@@ -352,6 +352,10 @@ module Danger
           .select { |comment| Comment.from_gitlab(comment).inline? }
 
         danger_comments = comments.select { |comment| Comment.from_gitlab(comment).generated_by_danger?(danger_id) }
+        puts "Comments"
+        puts comments
+        puts "Danger Comments"
+        puts danger_comments
         non_danger_comments = comments - danger_comments
 
         diff_lines = []
